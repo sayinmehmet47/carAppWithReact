@@ -11,7 +11,7 @@
   --c-secondary: #052f8a;
   --c-menu: #ccf;
   --c-border: #c46f20;
-  --c-txt-grey: #838c96;
+  --c-txt-grey: #c6ecf3;
   --w: 1200px;
 }
 
@@ -109,7 +109,7 @@ fieldset a {
 .img-item {
   background-color: var(--c-txt-grey);
   color: white;
-  border: 1px solid rgba(0, 0, 0, 0.8);
+  border: 1px solid var(--c-border);
   padding: 10px;
   font-size: 30px;
   text-align: center;
@@ -119,6 +119,7 @@ fieldset a {
 figure button {
   font-size: var(--font-small);
   margin: 0px 3px;
+
 }
 
 
@@ -126,14 +127,14 @@ form {
 
   width: 350px;
   height: 200px;
-  background-color: grey;
+  background-color: rgb(252, 204, 133);
   margin: 120px auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 40px 5px;
-  
+  padding: 90px 1px;
+
 
 
 }
@@ -141,6 +142,8 @@ form {
 form .name-group {
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
+  
 }
 
 form .link-group {
@@ -148,20 +151,54 @@ form .link-group {
   flex-direction: column;
 }
 
+form .body-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+
+}
+
+textarea {
+  width: 140%;
+  height: 100px;
+
+}
+
 form input {
-  font-size: 20px;
+  font-size: 13px;
+}
+
+h4{
+  background-color: rgb(238, 163, 64);
+  padding: 5px;
 }
 
 form label {
   font-size: var(--font-small);
-  color:white
+  color: rgb(15, 15, 15);
+  font-weight: bolder;
+  
 }
-form button{
-  font-size:var(--font-small);
+
+form button {
+  font-size: var(--font-small);
   margin-top: 15px;
 }
 
-
+a{
+  list-style:none;
+  text-decoration: none;
+}
+.car-body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.car-body img{
+  width: 920px;
+  height: 540px;
+}
 
 @media screen and (max-width:1500px) {
   .img-group {

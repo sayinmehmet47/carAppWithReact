@@ -7,13 +7,15 @@ const Create = () => {
 
   const [name, setName] = useState('');
   const [img, setImg] = useState('');
+  const [body,setBody]=useState("")
+
   const history = useHistory();
  
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const car = {name,img,id:uuid()};
+    const car = {name,img,body,id:uuid()};
 
     fetch('http://localhost:8000/cars/',{
       method: 'POST',
@@ -28,6 +30,8 @@ const Create = () => {
   return (
 
     <form action="submit" onSubmit={handleSubmit}>
+      <h4>Create your own car</h4>
+      <hr/>
       <div className="name-group">
         <label>Name of Car</label>
         <input
@@ -45,6 +49,20 @@ const Create = () => {
           value={img}
         />
       </div>
+
+      <div className="body-group">
+        <label>Car information</label>
+        <textarea
+          type="text"
+          onChange={(e) => setBody(e.target.value)}
+          value={body}
+        />
+      </div>
+
+
+
+
+
       <button>Add Car</button>
     </form>
   );

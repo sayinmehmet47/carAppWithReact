@@ -7,6 +7,7 @@ import Contact from './components/Contact';
 import Home from './components/Home';
 import NotFound from './components/NotFound';
 import Create from './components/Create';
+import CarDetails from './components/CarDetails';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
           <Route path="/create">
             <Create/>
           </Route>
+          <Route path="/cars/:id">
+              <CarDetails/>
+            </Route>
           <Route path="*">
             <NotFound />
           </Route>
