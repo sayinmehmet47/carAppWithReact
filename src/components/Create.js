@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
+import uuid from "uuid/dist/v1"
 
 const Create = () => {
   const [name, setName] = useState('');
-  const [link, setLink] = useState('');
+  const [img, setImg] = useState('');
   const history = useHistory();
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    const car = {name,link};
+    const car = {name,img,id:uuid()};
 
-    fetch('http://localhost:8000/cars',{
+    fetch('http://localhost:8000/cars/',{
       method: 'POST',
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type":"application/json" },
       body: JSON.stringify(car)
     }).then(() => {
       // history.go(-1);
@@ -36,8 +37,8 @@ const Create = () => {
         <label>Car picture link</label>
         <input
           type="text"
-          onChange={(e) => setLink(e.target.value)}
-          value={link}
+          onChange={(e) => setImg(e.target.value)}
+          value={img}
         />
       </div>
       <button>Add Car</button>
