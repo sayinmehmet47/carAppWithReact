@@ -1,12 +1,9 @@
 import useFetch from '../fetch/useFetch';
-import { useParams, useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import CarList from './CarList';
 
 const Home = () => {
-  const history = useHistory();
-
 
   const {
     error,
@@ -14,15 +11,6 @@ const Home = () => {
     data: cars,
   } = useFetch('http://localhost:8000/cars');
 
-  const handleRemove = (id) => {
-
-    fetch('http://localhost:8000/cars/'+id,{
-      method:"DELETE"
-
-}).then(()=>{
-  history.go(0);
-}) 
-  };
 
   return (
     <>

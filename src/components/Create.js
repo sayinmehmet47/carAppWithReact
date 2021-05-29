@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
-import { useHistory } from "react-router-dom";
+import React, { useState} from 'react';
+import {useHistory } from 'react-router-dom';
+
 import uuid from "uuid/dist/v1"
 
 const Create = () => {
+
   const [name, setName] = useState('');
   const [img, setImg] = useState('');
   const history = useHistory();
-  
+ 
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const car = {name,img,id:uuid()};
