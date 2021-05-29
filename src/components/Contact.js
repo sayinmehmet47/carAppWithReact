@@ -1,8 +1,13 @@
+import { Button } from "react-bootstrap"
+import "bootstrap/dist/css/bootstrap.min.css"
+
+
 const Contact = () => {
     return (
-        <div>
-            <h4>Lorem ipsum dolor sit amet.</h4>
-        </div>
+     <div>
+        <Button>gfsfg</Button>
+
+     </div>
     );
 }
  

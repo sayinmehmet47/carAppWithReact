@@ -3,8 +3,8 @@
 :root {
   --main-color: hotpink;
   --pane-padding: 5px 42px;
-  --font-small: 15px;
-  --font-md: 40px;
+  --font-small: 17px;
+  --font-md: 25px;
   --c-white: #fff;
   --c-primary: #0367ca;
   --c-primary-red: #e30613;
@@ -25,14 +25,15 @@
 
 }
 
+
 .navbar {
-  padding: 5px;
+  padding: 2px;
   display: flex;
   justify-content: space-evenly;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
   font-size: var(--font-small);
-  background-color: var(--c-primary);
+  background:linear-gradient(180deg,#878684 0%,rgb(22, 17, 12) 50%,#464545 100%);
   align-items: center;
   border-bottom: 3px solid var(--c-border);
 }
@@ -47,9 +48,8 @@
 }
 
 .navbar a {
-  margin-left: 16px;
   text-decoration: none;
-  padding: 13px;
+  padding: 3px;
   border-radius: 5px;
   color: var(--c-white);
 
@@ -100,9 +100,9 @@ fieldset a {
 
 .img-group {
   display: grid;
-  grid-gap: 50px;
+  grid-gap: 10px;
   grid-template-columns: auto auto;
-  padding: 20px auto;
+  padding: 10px auto;
 }
 
 
@@ -110,7 +110,7 @@ fieldset a {
   background-color: var(--c-txt-grey);
   color: white;
   border: 1px solid var(--c-border);
-  padding: 10px;
+  padding: 5px;
   font-size: 30px;
   text-align: center;
   cursor: pointer;
@@ -125,67 +125,12 @@ figure button {
 }
 
 
-form {
-
-  width: 350px;
-  height: 200px;
-  background-color: rgb(252, 204, 133);
-  margin: 120px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 90px 1px;
-
-
-
-}
-
-form .name-group {
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-  
-}
-
-form .link-group {
-  display: flex;
-  flex-direction: column;
-}
-
-form .body-group {
-  display: flex;
-  flex-direction: column;
-  margin-top: 5px;
-
-}
-
-textarea {
-  width: 140%;
-  height: 100px;
-
-}
-
-form input {
-  font-size: 13px;
-}
-
 h4{
   background-color: rgb(238, 163, 64);
   padding: 5px;
 }
 
-form label {
-  font-size: var(--font-small);
-  color: rgb(15, 15, 15);
-  font-weight: bolder;
-  
-}
 
-form button {
-  font-size: var(--font-small);
-  margin-top: 15px;
-}
 
 a{
   list-style:none;

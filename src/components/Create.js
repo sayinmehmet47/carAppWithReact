@@ -1,70 +1,76 @@
-import React, { useState} from 'react';
-import {useHistory } from 'react-router-dom';
-
-import uuid from "uuid/dist/v1"
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { Button, Form } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import uuid from 'uuid/dist/v1';
 
 const Create = () => {
-
   const [name, setName] = useState('');
   const [img, setImg] = useState('');
-  const [body,setBody]=useState("")
+  const [body, setBody] = useState('');
 
   const history = useHistory();
- 
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const car = {name,img,body,id:uuid()};
+    const car = { name, img, body, id: uuid() };
 
-    fetch('http://localhost:8000/cars/',{
+    fetch('http://localhost:8000/cars/', {
       method: 'POST',
-      headers: { "Content-Type":"application/json" },
-      body: JSON.stringify(car)
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(car),
     }).then(() => {
       // history.go(-1);
       history.push('/');
-    })
-  }
+    });
+  };
 
   return (
+    <Form
+      className="border shadow border-dark bg-dark rounded text-white mt-3 p-5"
+      action="submit"
+      onSubmit={handleSubmit}
+      style={{ width: '20rem', margin: 'auto auto' }}
+    >
+      <Form.Group controlId="formBasicName">
+        <Form.Label>Create your Own Car</Form.Label>
+        <hr />
 
-    <form action="submit" onSubmit={handleSubmit}>
-      <h4>Create your own car</h4>
-      <hr/>
-      <div className="name-group">
-        <label>Name of Car</label>
-        <input
+        <Form.Control
           onChange={(e) => setName(e.target.value)}
           value={name}
           type="text"
+          placeholder="Enter car name"
         />
-      </div>
-
-      <div className="link-group">
-        <label>Car picture link</label>
-        <input
-          type="text"
-          onChange={(e) => setImg(e.target.value)}
-          value={img}
-        />
-      </div>
-
-      <div className="body-group">
-        <label>Car information</label>
-        <textarea
-          type="text"
-          onChange={(e) => setBody(e.target.value)}
-          value={body}
-        />
-      </div>
+      </Form.Group>
+      <hr />
 
 
+      <Form.Group>
+        <Form.Label>Png Link</Form.Label>
+        <Form.Control
+         type="text"
+         onChange={(e) => setImg(e.target.value)}
+         value={img}
+          placeholder="Link" />
+      </Form.Group>
+      <hr />
 
+      <Form.Group controlId="exampleForm.ControlTextarea1">
+        <Form.Label>Info about the car</Form.Label>
+        <Form.Control
+         type="text"
+         onChange={(e) => setBody(e.target.value)}
+         value={body}
+        
+        as="textarea" rows={3} />
+      </Form.Group>
+      <hr />
 
-
-      <button>Add Car</button>
-    </form>
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+    </Form>
   );
 };
 

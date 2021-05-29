@@ -1,6 +1,6 @@
-import { useParams, useHistory, Link } from 'react-router-dom';
-import useFetch from '../fetch/useFetch';
-
+import { useHistory, Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 const CarList = ({ cars }) => {
   const history = useHistory();
 
@@ -30,8 +30,8 @@ const CarList = ({ cars }) => {
               </div>
 
               <figcaption>{entry.name}</figcaption>
-              <button>Take Info</button>
-              <button onClick={() => handleRemove(entry.id)}>Remove</button>
+              <Button className="btn btn-info">Take Info</Button>
+              <Button className="btn btn-danger" onClick={() => handleRemove(entry.id)}>Remove</Button>
             </Link>
           </figure>
         );

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import logo from './logo.svg';
 const Navbar = () => {
   return (
-    <nav className="navbar">
+    <nav className="navbar bg-primary">
       <Link to="/"> 
         
         <img src={logo} className="App-logo" alt="logo" />
