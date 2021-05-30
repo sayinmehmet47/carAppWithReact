@@ -14,6 +14,7 @@ const Navbar = () => {
       <Link to="/about">About</Link>
       <Link to="/contact">Contact</Link>
       <Link to="/create">Create</Link>
+      <Link to="/favorites">💚Favorites(variable)</Link>
     </nav>
   );
 };

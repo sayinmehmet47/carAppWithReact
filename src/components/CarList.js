@@ -1,20 +1,24 @@
 import { useHistory, Link } from 'react-router-dom';
+import React, { useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { GeneralContext } from '../context/GeneralContext';
 const CarList = ({ cars }) => {
-  const history = useHistory();
+  const { favorites, dispatch } = useContext(GeneralContext);
 
+  const history = useHistory();
   const handleRemove = (id) => {
     fetch('http://localhost:8000/cars/' + id, {
       method: 'DELETE',
     }).then(() => {});
     history.go(0);
   };
+
   return (
     <div className="img-group">
       {cars.map((entry) => {
         return (
-          <figure key={entry.id} className="img-item">
+          <figure key={entry.id} className="img-item d-flex flex-column text-center">
             <Link to={`/cars/${entry.id}`}>
               <div className="flip-card">
                 <div className="flip-card-inner">
@@ -30,9 +34,28 @@ const CarList = ({ cars }) => {
               </div>
 
               <figcaption>{entry.name}</figcaption>
-              <Button className="btn btn-info">Take Info</Button>
-              <Button className="btn btn-danger" onClick={() => handleRemove(entry.id)}>Remove</Button>
             </Link>
+            <div>
+              <Button className="btn btn-info">Take Info</Button>
+
+              <Button
+                className="btn btn-danger"
+                onClick={() => handleRemove(entry.id)}
+              >
+                Remove
+              </Button>
+              <Button
+                onClick={() =>
+                  dispatch({
+                    type: 'ADD_FAVORITE',
+                    cars: { name: entry.name, body: entry.body },
+                  })
+                }
+                className="btn btn-success"
+              >
+                Add to Favorite
+              </Button>
+            </div>
           </figure>
         );
       })}

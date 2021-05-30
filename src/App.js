@@ -8,11 +8,14 @@ import Home from './components/Home';
 import NotFound from './components/NotFound';
 import Create from './components/Create';
 import CarDetails from './components/CarDetails';
+import Favorites from './components/Favorites';
+import GeneralContextProvider from './context/GeneralContext';
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <GeneralContextProvider>
         <Navbar />
         <Switch>
           <Route exact path="/">
@@ -29,6 +32,10 @@ function App() {
           <Route path="/create">
             <Create/>
           </Route>
+          <Route path="/favorites">
+            <Favorites/>
+          </Route>
+
           <Route path="/cars/:id">
               <CarDetails/>
             </Route>
@@ -37,6 +44,8 @@ function App() {
           </Route>
          
         </Switch>
+        </GeneralContextProvider>
+
       </div>
     </Router>
   );
