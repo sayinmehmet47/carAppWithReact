@@ -9,7 +9,7 @@ const CarDetails = () => {
     data: car,
     isPending,
     error,
-  } = useFetch('https://car-app1.herokuapp.com/cars' + id);
+  } = useFetch('http://localhost:8000/cars/' + id);
   return (
     <div className="car-details">
       {isPending && (
