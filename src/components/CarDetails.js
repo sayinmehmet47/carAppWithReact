@@ -9,7 +9,7 @@ const CarDetails = () => {
     data: car,
     isPending,
     error,
-  } = useFetch('http://localhost:8000/cars/' + id);
+  } = useFetch('https://car-app1.herokuapp.com/cars' + id);
   return (
     <div className="car-details">
       {isPending && (
@@ -20,7 +20,7 @@ const CarDetails = () => {
       {error && <div>Something goes wrong!!!</div>}
       {car && (
         <div className="car-body">
-            <p>{car.body}</p>
+          <p>{car.body}</p>
           <figure>
             <img src={car.img} alt="" />
           </figure>

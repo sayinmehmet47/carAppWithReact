@@ -15,7 +15,7 @@ const Create = () => {
     e.preventDefault();
     const car = { name, img, body, id: uuid() };
 
-    fetch('http://localhost:8000/cars/', {
+    fetch('https://car-app1.herokuapp.com/cars', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(car),
@@ -45,28 +45,29 @@ const Create = () => {
       </Form.Group>
       <hr />
 
-
       <Form.Group>
         <Form.Label>Png Link</Form.Label>
         <Form.Control
-         type="text"
-         onChange={(e) => setImg(e.target.value)}
-         value={img}
-          placeholder="Link" />
+          type="text"
+          onChange={(e) => setImg(e.target.value)}
+          value={img}
+          placeholder="Link"
+        />
       </Form.Group>
       <hr />
 
       <Form.Group controlId="exampleForm.ControlTextarea1">
         <Form.Label>Info about the car</Form.Label>
         <Form.Control
-         type="text"
-         onChange={(e) => setBody(e.target.value)}
-         value={body}
-        
-        as="textarea" rows={3} />
+          type="text"
+          onChange={(e) => setBody(e.target.value)}
+          value={body}
+          as="textarea"
+          rows={3}
+        />
       </Form.Group>
       <hr />
-        <button className="btn btn-outline-light">Submit</button>
+      <button className="btn btn-outline-light">Submit</button>
     </Form>
   );
 };

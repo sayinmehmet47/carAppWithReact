@@ -8,18 +8,21 @@ const CarList = ({ cars }) => {
 
   const history = useHistory();
   const handleRemove = (id) => {
-    fetch('http://localhost:8000/cars/' + id, {
+    fetch('https://car-app1.herokuapp.com/cars' + id, {
       method: 'DELETE',
     }).then(() => {});
     history.go(0);
   };
-  console.log(favorites)
+  console.log(favorites);
 
   return (
     <div className="img-group">
       {cars.map((entry) => {
         return (
-          <figure key={entry.id} className="img-item d-flex flex-column text-center">
+          <figure
+            key={entry.id}
+            className="img-item d-flex flex-column text-center"
+          >
             <Link to={`/cars/${entry.id}`}>
               <div className="flip-card">
                 <div className="flip-card-inner">
@@ -37,8 +40,8 @@ const CarList = ({ cars }) => {
               <figcaption>{entry.name}</figcaption>
             </Link>
             <div>
-                <Link to={`/cars/${entry.id}`}>
-              <Button className="btn btn-info">Take Info</Button>
+              <Link to={`/cars/${entry.id}`}>
+                <Button className="btn btn-info">Take Info</Button>
               </Link>
               <Button
                 className="btn btn-danger"
@@ -50,7 +53,11 @@ const CarList = ({ cars }) => {
                 onClick={() =>
                   dispatch({
                     type: 'ADD_FAVORITE',
-                    cars: { name: entry.name, body: entry.body ,link:entry.img},
+                    cars: {
+                      name: entry.name,
+                      body: entry.body,
+                      link: entry.img,
+                    },
                   })
                 }
                 className="btn btn-success"

@@ -4,13 +4,11 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import CarList from './CarList';
 
 const Home = () => {
-
   const {
     error,
     isPending,
     data: cars,
-  } = useFetch('http://localhost:8000/cars');
-
+  } = useFetch('https://car-app1.herokuapp.com/cars');
 
   return (
     <>
@@ -22,10 +20,7 @@ const Home = () => {
         </div>
       )}
 
-     
-     {cars&&<CarList cars={cars}/>}
-     
-  
+      {cars && <CarList cars={cars} />}
     </>
   );
 };
