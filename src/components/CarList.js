@@ -8,7 +8,7 @@ const CarList = ({ cars }) => {
 
   const history = useHistory();
   const handleRemove = (id) => {
-    fetch('https://car-app1.herokuapp.com/cars' + id, {
+    fetch('http://localhost:8000/cars/' + id, {
       method: 'DELETE',
     }).then(() => {});
     history.go(0);

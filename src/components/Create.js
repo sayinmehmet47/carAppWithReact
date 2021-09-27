@@ -15,7 +15,7 @@ const Create = () => {
     e.preventDefault();
     const car = { name, img, body, id: uuid() };
 
-    fetch('https://car-app1.herokuapp.com/cars', {
+    fetch('http://localhost:8000/cars/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(car),

@@ -8,7 +8,7 @@ const Home = () => {
     error,
     isPending,
     data: cars,
-  } = useFetch('https://car-app1.herokuapp.com/cars');
+  } = useFetch('http://localhost:8000/cars');
 
   return (
     <>
