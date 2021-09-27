@@ -11,7 +11,9 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "bootstrap": "^4.6.0",
+    "concurrently": "^6.2.1",
     "express": "^4.17.1",
+    "json-server": "^0.16.3",
     "nodemon": "^2.0.13",
     "path": "^0.12.7",
     "react": "^17.0.2",
@@ -26,11 +28,12 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"react-scripts start\" \"json-server --watch db.json --port 8000\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:8000",
   "eslintConfig": {
     "extends": [
       "react-app",
