@@ -66,10 +66,7 @@ const Create = () => {
         as="textarea" rows={3} />
       </Form.Group>
       <hr />
-
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
+        <button className="btn btn-outline-light">Submit</button>
     </Form>
   );
 };

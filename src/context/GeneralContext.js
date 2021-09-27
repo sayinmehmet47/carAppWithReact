@@ -4,16 +4,11 @@ import { favoriteReducer } from '../reducers/GeneralReducers';
 export const GeneralContext = createContext();
 
 const GeneralContextProvider = (props) => {
-    const [favorites, dispatch] = useReducer(favoriteReducer,[{"id":"3","name":"Mustang"}])
+    const [favorites, dispatch] = useReducer(favoriteReducer,[])
 
 
 
   return (
-
-
-
-
-
 
     <GeneralContext.Provider value={{favorites,dispatch}}>
 

@@ -24,11 +24,13 @@
   font-family: "Quicksand";
 
 }
+body{
+  margin-top: 100px;
+}
 
 
 .navbar {
   padding: 2px;
-  display: flex;
   justify-content: space-evenly;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
@@ -211,7 +213,7 @@ a{
 }
 
 .flip-card-back {
-  background-color: #2980b9;
+  background-color: #000a11;
   color: white;
   transform: rotateY(180deg);
   font-size:var(--font-small)

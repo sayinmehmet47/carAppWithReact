@@ -13,6 +13,7 @@ const CarList = ({ cars }) => {
     }).then(() => {});
     history.go(0);
   };
+  console.log(favorites)
 
   return (
     <div className="img-group">
@@ -36,8 +37,9 @@ const CarList = ({ cars }) => {
               <figcaption>{entry.name}</figcaption>
             </Link>
             <div>
+                <Link to={`/cars/${entry.id}`}>
               <Button className="btn btn-info">Take Info</Button>
-
+              </Link>
               <Button
                 className="btn btn-danger"
                 onClick={() => handleRemove(entry.id)}
@@ -48,7 +50,7 @@ const CarList = ({ cars }) => {
                 onClick={() =>
                   dispatch({
                     type: 'ADD_FAVORITE',
-                    cars: { name: entry.name, body: entry.body },
+                    cars: { name: entry.name, body: entry.body ,link:entry.img},
                   })
                 }
                 className="btn btn-success"

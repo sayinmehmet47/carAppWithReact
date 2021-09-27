@@ -11,6 +11,7 @@ export const favoriteReducer=(state,action) => {
         return [...state,{
             "name":action.cars.name,
             "body":action.cars.body,
+            "link":action.cars.link,
             "id":uuid()  
         }]
 
