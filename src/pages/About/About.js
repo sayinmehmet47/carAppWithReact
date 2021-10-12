@@ -11,7 +11,7 @@ const About = () => {
           nesciunt sapiente sed exercitationem molestias cumque perferendis,
           sequi atque quia corporis!
         </p>
-        <Link to="/">Turn back to home</Link>
+        <Link to="/">Turn back to homes</Link>
       </fieldset>
       <Footer />
     </>
