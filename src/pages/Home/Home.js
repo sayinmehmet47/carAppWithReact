@@ -1,7 +1,8 @@
-import useFetch from '../fetch/useFetch';
+import useFetch from '../../fetch/useFetch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
-import CarList from './CarList';
+import CarList from '../../components/CarList';
+import Footer from '../../components/Footer/Footer';
 
 const Home = () => {
   const {
@@ -21,6 +22,7 @@ const Home = () => {
       )}
 
       {cars && <CarList cars={cars} />}
+      <Footer />
     </>
   );
 };

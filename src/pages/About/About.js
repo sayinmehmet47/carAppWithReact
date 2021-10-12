@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom';
+import Footer from '../../components/Footer/Footer';
 
 const About = () => {
   return (
-    <div>
+    <>
       <fieldset>
         <h2>Lorem ipsum dolor sit amet.</h2>
         <p>
@@ -12,7 +13,8 @@ const About = () => {
         </p>
         <Link to="/">Turn back to home</Link>
       </fieldset>
-    </div>
+      <Footer />
+    </>
   );
 };
 

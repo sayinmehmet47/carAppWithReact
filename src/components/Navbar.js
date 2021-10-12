@@ -1,32 +1,26 @@
 import ReactDOM from 'react-dom';
-import React, { useContext,useRef,useEffect } from 'react';
+import React, { useContext, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHatCowboy } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import logo from './logo.svg';
 import { GeneralContext } from '../context/GeneralContext';
 
-  
-
 const Navbar = () => {
   const { favorites } = useContext(GeneralContext);
-  const navigation=useRef()
+  const navigation = useRef();
   useEffect(() => {
-    console.log(navigation.current)
-
-      window.addEventListener("scroll",()=>{
-          if(window.scrollY>navigation.current.offsetHeight+150){
-            navigation.current.classList.add(".active")
-          }else{
-            navigation.current.classList.remove(".active")
-          }
-
-
-      })
-  })
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > navigation.current.offsetHeight + 150) {
+        navigation.current.classList.add('.active');
+      } else {
+        navigation.current.classList.remove('.active');
+      }
+    });
+  });
 
   return (
-    <nav ref={navigation}   className="navbar fixed-top bg-primary">
+    <nav ref={navigation} className="navbar fixed-top bg-primary">
       <Link to="/">
         <img src={logo} className="App-logo" alt="logo" />
       </Link>
@@ -41,5 +35,3 @@ const Navbar = () => {
 
 export default Navbar;
 <FontAwesomeIcon icon={faHatCowboy} />;
-
-
