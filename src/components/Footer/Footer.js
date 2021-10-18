@@ -7,6 +7,8 @@ import {
   FaTwitter,
   FaLinkedin,
 } from 'react-icons/fa';
+import { GiAbstract021 } from 'react-icons/gi';
+
 import {
   FooterContainer,
   FooterSubscription,
@@ -66,7 +68,8 @@ function Footer() {
       <SocialMedia>
         <SocialMediaWrap>
           <SocialLogo to="/">
-            <SocialIcon />
+            <GiAbstract021 />
+            {''}
             SAYIN.CO
           </SocialLogo>
           <WebsiteRights>SAYIN.CO © 2021</WebsiteRights>

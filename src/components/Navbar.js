@@ -5,7 +5,7 @@ import { faHatCowboy } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import logo from './logo.svg';
 import { GeneralContext } from '../context/GeneralContext';
-
+import { GiAbstract021 } from 'react-icons/gi';
 const Navbar = () => {
   const { favorites } = useContext(GeneralContext);
   const navigation = useRef();
@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <nav ref={navigation} className="navbar fixed-top bg-primary">
       <Link to="/">
-        <img src={logo} className="App-logo" alt="logo" />
+        <GiAbstract021 size="50" />
       </Link>
       <Link to="/">Home</Link>
       <Link to="/about">About</Link>
