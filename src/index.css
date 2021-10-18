@@ -62,6 +62,7 @@ body {
 .navbar a:hover {
   color: #929091;
   text-decoration: none;
+  transition: 0.3s ease-out;
 
 }
 
