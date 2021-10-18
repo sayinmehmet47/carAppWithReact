@@ -1,21 +1,21 @@
 import React from 'react';
+import 'mapbox-gl/dist/mapbox-gl.css';
+
 import ReactMapboxGl, {
   Layer,
   Feature,
   Marker,
   ZoomControl,
-  ScaleControl,
 } from 'react-mapbox-gl';
 import { GoLocation } from 'react-icons/go';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
+
 require('dotenv').config();
 
 const Map = ReactMapboxGl({
-  accessToken:
-    'pk.eyJ1Ijoic2F5aW5tZWhtZXQ0NyIsImEiOiJja3ByZWN3d2YzM3A4MnBvODhmcm95N3UxIn0.V3Jz4WGICqwetae4kgj-8g',
+  accessToken: process.env.REACT_APP_MAP_TOKEN,
 });
-
 export default function MapComponent() {
   const defaultProps = {
     center: {
