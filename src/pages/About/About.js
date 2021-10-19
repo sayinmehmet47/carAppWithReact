@@ -14,8 +14,8 @@ const About = () => {
         </h3>
         <img src={artWork} alt="fd" />
       </TopBanner>
-      <Card>
-        <Card.Body className="px-3">
+      <Card className="px-3 mx-2 shadow-lg my-3">
+        <Card.Body>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae magni
           temporibus aliquid natus. Eos animi voluptate, ullam soluta officia
           commodi fugiat unde quis labore suscipit pariatur veritatis nulla
