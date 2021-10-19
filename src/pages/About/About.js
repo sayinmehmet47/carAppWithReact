@@ -9,7 +9,7 @@ const About = () => {
   return (
     <>
       <TopBanner>
-        <h3 style={{ width: '20vw' }}>
+        <h3 className=" mx-5">
           Europe’s largest wholesale platform for used cars
         </h3>
         <img src={artWork} alt="fd" />
