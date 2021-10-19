@@ -1,13 +1,9 @@
 import styled from 'styled-components';
+import Back from '../../images/back.png';
 
-export const Header = styled.h5`
-  position: relative;
-  bottom: -17px;
-  background: #f75e5e;
-  padding-right: 10px;
-  margin: 5px;
-  display: inline-block;
-`;
-export const Border = styled.div`
-  border-bottom: 2px solid #ca0b0b;
+export const TopBanner = styled.div`
+  background-image: url(${Back});
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 10px;
 `;
