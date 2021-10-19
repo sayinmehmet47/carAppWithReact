@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, Image } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import uuid from 'uuid/dist/v1';
 import Footer from '../../components/Footer/Footer';
+import cars from '../../images/cars.png';
 
 const Create = () => {
   const [name, setName] = useState('');
@@ -28,49 +29,58 @@ const Create = () => {
 
   return (
     <>
-      <Form
-        className="border shadow border-dark bg-dark rounded text-white mt-3 mb-5 p-5"
-        action="submit"
-        onSubmit={handleSubmit}
-        style={{ width: '20rem', margin: 'auto auto' }}
-      >
-        <Form.Group controlId="formBasicName">
-          <Form.Label>Create your Own Car</Form.Label>
+      <div className="d-flex flex-wrap">
+        <Image
+          src={cars}
+          style={{ maxWidth: 580, maxHeight: 350 }}
+          className="img-fluid"
+        ></Image>
+
+        <Form
+          className="border shadow border-dark bg-dark rounded text-white mt-3 mb-5 p-5"
+          action="submit"
+          onSubmit={handleSubmit}
+          style={{ width: '20rem', margin: 'auto auto' }}
+        >
+          <Form.Group controlId="formBasicName">
+            <Form.Label>Create your Own Car</Form.Label>
+            <hr />
+
+            <Form.Control
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+              type="text"
+              placeholder="Enter car name"
+            />
+          </Form.Group>
           <hr />
 
-          <Form.Control
-            onChange={(e) => setName(e.target.value)}
-            value={name}
-            type="text"
-            placeholder="Enter car name"
-          />
-        </Form.Group>
-        <hr />
+          <Form.Group>
+            <Form.Label>Png Link</Form.Label>
+            <Form.Control
+              type="text"
+              onChange={(e) => setImg(e.target.value)}
+              value={img}
+              placeholder="Link"
+            />
+          </Form.Group>
+          <hr />
 
-        <Form.Group>
-          <Form.Label>Png Link</Form.Label>
-          <Form.Control
-            type="text"
-            onChange={(e) => setImg(e.target.value)}
-            value={img}
-            placeholder="Link"
-          />
-        </Form.Group>
-        <hr />
+          <Form.Group controlId="exampleForm.ControlTextarea1">
+            <Form.Label>Info about the car</Form.Label>
+            <Form.Control
+              type="text"
+              onChange={(e) => setBody(e.target.value)}
+              value={body}
+              as="textarea"
+              rows={3}
+            />
+          </Form.Group>
+          <hr />
+          <button className="btn btn-outline-light">Submit</button>
+        </Form>
+      </div>
 
-        <Form.Group controlId="exampleForm.ControlTextarea1">
-          <Form.Label>Info about the car</Form.Label>
-          <Form.Control
-            type="text"
-            onChange={(e) => setBody(e.target.value)}
-            value={body}
-            as="textarea"
-            rows={3}
-          />
-        </Form.Group>
-        <hr />
-        <button className="btn btn-outline-light">Submit</button>
-      </Form>
       <Footer />
     </>
   );

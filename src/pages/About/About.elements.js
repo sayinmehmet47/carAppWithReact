@@ -6,5 +6,5 @@ export const TopBanner = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 100px;
-  grid-template-columns: repeat(auto-fill, minmax(375px, max-content));
+  grid-template-columns: repeat(auto-fill, minmax(315px, max-content));
 `;
